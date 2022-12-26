@@ -1,13 +1,14 @@
 import Head from 'next/head';
 import styles from 'styles/Home.module.css';
+import TestComp from '../components/TestComponent';
 import dbConnect from '../lib/dbConnect';
 import Test from '../model/Test';
 
 export default async function page() {
   await dbConnect();
   let docs = await Test.find();
-  console.log('dss', docs);
   if (!docs) return null;
+
   return (
     <div>
       <Head>
@@ -16,7 +17,7 @@ export default async function page() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Hola putita!</h1>
+        <TestComp />
       </main>
       <div>
         {docs.map((test: any) => (

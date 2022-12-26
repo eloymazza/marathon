@@ -31,6 +31,7 @@ if (!cached) {
 
 const dbConnect = async () => {
   if (cached.conn) {
+    console.log('is cached');
     return cached.conn;
   }
 
