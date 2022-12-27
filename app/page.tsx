@@ -6,7 +6,6 @@ import Test from '../model/Test';
 export default async function page() {
   await dbConnect();
   let docs = await Test.find();
-  console.log('dss', docs);
   if (!docs) return null;
   return (
     <div>

@@ -10,7 +10,6 @@ declare global {
 }
 
 const MONGODB_URI = process.env.MONGODB_URI || '';
-console.log(MONGODB_URI);
 if (!MONGODB_URI) {
   throw new Error(
     'Please define the MONGODB_URI environment variable inside .env.local'
@@ -27,10 +26,11 @@ let cached = global.mongoose;
 if (!cached) {
   global.mongoose = {};
   cached = global.mongoose;
+  console.log('not cached connection');
 }
-
 const dbConnect = async () => {
   if (cached.conn) {
+    console.log('cached connection');
     return cached.conn;
   }
 
