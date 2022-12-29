@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Head from './head';
+import Providers from '../components/Providers/Providers';
 
 export default function RootLayout({
   children,
@@ -10,8 +11,10 @@ export default function RootLayout({
     <html>
       <Head />
       <body>
-        <Header />
-        {children}
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );

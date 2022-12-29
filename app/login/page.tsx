@@ -1,5 +1,18 @@
-import React from 'react';
+'use client';
+import { GoogleLogin } from '@react-oauth/google';
 
 export default function page() {
-  return <div>Login</div>;
+  return (
+    <>
+      <h2> Login</h2>
+      <GoogleLogin
+        onSuccess={(credentialResponse) => {
+          console.log(credentialResponse);
+        }}
+        onError={() => {
+          console.log('Login Failed');
+        }}
+      />
+    </>
+  );
 }
