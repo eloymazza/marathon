@@ -1,12 +1,18 @@
+import Header from '../components/Header';
+import Head from './head';
+
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html>
-      <head />
-      <body>{children}</body>
+      <Head />
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
-  )
+  );
 }
