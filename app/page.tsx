@@ -1,9 +1,6 @@
-import styles from 'styles/Home.module.css';
-import dbConnect from '../lib/dbConnect';
-import Test from '../model/Test';
+import Test from '../models/Test';
 
 export default async function page() {
-  await dbConnect();
   let docs = await Test.find();
   if (!docs) return null;
   return (
